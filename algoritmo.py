@@ -1,102 +1,40 @@
 import pandas as pd
 import numpy as np
 import random
+import json
 from pyeasyga import pyeasyga
+
+# Run params
 
 number_of_teams = 4
 
-participants = [
-        'Lucas Neno',
-        'Bruno Mibielli',
-        'Pedro Aquino',
-        'Paulo Galeão',
-        'João Pedro Castro',
-        'Duda Magluta',
-        'Lucas Tostes',
-        'Gabriel Lessa',
-        'Felipe Arêas',
-        'Patrícia Telles',
-        'Tito Labrunie',
-        'Ilan Vale',
-        'Roberto Soares',
-        'Isadora Barretto',
-        'Rafael Freitas',
-        'Luaré'
-    ]
-
-modals_weigths = {  'Badminton'                 :2,
-                    'Vôlei de grama'            :3,
-                    'Ping pong de mesa'         :2,
-                    'Beer pong'                 :3,
-                    'Chute a garrafa'           :2,
-                    'Baralho (Sueca, Truco...)' :1,
-                    'Videogames'                :3,
-                    'Imagem & Ação'             :2,
-                    'Sobremesa'                 :1,
-                    'Coregrafia'                :1,
-                    'Boardgames'                :2
-                    }
-
 competencies_multipler = 1
-
-competencies = [
-        {'Badminton':2,'Vôlei de grama':4,'Ping pong de mesa':3,'Beer pong':3,'Chute a garrafa':1,'Baralho (Sueca, Truco...)':2,'Videogames':3,'Imagem & Ação':5,'Sobremesa':5,'Coregrafia':4,'Boardgames':5},
-        {'Badminton':3,'Vôlei de grama':3,'Ping pong de mesa':3,'Beer pong':3,'Chute a garrafa':1,'Baralho (Sueca, Truco...)':0,'Videogames':5,'Imagem & Ação':5,'Sobremesa':3,'Coregrafia':3,'Boardgames':3},
-        {'Badminton':0,'Vôlei de grama':0,'Ping pong de mesa':0,'Beer pong':1,'Chute a garrafa':0,'Baralho (Sueca, Truco...)':2,'Videogames':4,'Imagem & Ação':3,'Sobremesa':1,'Coregrafia':1,'Boardgames':3},
-        {'Badminton':2,'Vôlei de grama':2,'Ping pong de mesa':2,'Beer pong':2,'Chute a garrafa':2,'Baralho (Sueca, Truco...)':0,'Videogames':2,'Imagem & Ação':2,'Sobremesa':2,'Coregrafia':2,'Boardgames':2},
-        {'Badminton':4,'Vôlei de grama':3,'Ping pong de mesa':4,'Beer pong':5,'Chute a garrafa':1,'Baralho (Sueca, Truco...)':5,'Videogames':4,'Imagem & Ação':4,'Sobremesa':4,'Coregrafia':3,'Boardgames':4},
-        {'Badminton':5,'Vôlei de grama':5,'Ping pong de mesa':5,'Beer pong':5,'Chute a garrafa':0,'Baralho (Sueca, Truco...)':3,'Videogames':1,'Imagem & Ação':2,'Sobremesa':4,'Coregrafia':3,'Boardgames':3},
-        {'Badminton':5,'Vôlei de grama':4,'Ping pong de mesa':4,'Beer pong':4,'Chute a garrafa':5,'Baralho (Sueca, Truco...)':3,'Videogames':5,'Imagem & Ação':5,'Sobremesa':1,'Coregrafia':5,'Boardgames':5},
-        {'Badminton':1,'Vôlei de grama':1,'Ping pong de mesa':2,'Beer pong':1,'Chute a garrafa':2,'Baralho (Sueca, Truco...)':0,'Videogames':3,'Imagem & Ação':1,'Sobremesa':0,'Coregrafia':1,'Boardgames':1},
-        {'Badminton':3,'Vôlei de grama':3,'Ping pong de mesa':4,'Beer pong':2,'Chute a garrafa':3,'Baralho (Sueca, Truco...)':1,'Videogames':4,'Imagem & Ação':3,'Sobremesa':3,'Coregrafia':2,'Boardgames':3},
-        {'Badminton':2,'Vôlei de grama':2,'Ping pong de mesa':1,'Beer pong':1,'Chute a garrafa':0,'Baralho (Sueca, Truco...)':0,'Videogames':1,'Imagem & Ação':0,'Sobremesa':2,'Coregrafia':2,'Boardgames':1},
-        {'Badminton':4,'Vôlei de grama':5,'Ping pong de mesa':3,'Beer pong':5,'Chute a garrafa':2,'Baralho (Sueca, Truco...)':0,'Videogames':3,'Imagem & Ação':4,'Sobremesa':0,'Coregrafia':4,'Boardgames':3},
-        {'Badminton':5,'Vôlei de grama':5,'Ping pong de mesa':5,'Beer pong':4,'Chute a garrafa':3,'Baralho (Sueca, Truco...)':5,'Videogames':3,'Imagem & Ação':5,'Sobremesa':1,'Coregrafia':5,'Boardgames':3},
-        {'Badminton':2,'Vôlei de grama':2,'Ping pong de mesa':2,'Beer pong':2,'Chute a garrafa':2,'Baralho (Sueca, Truco...)':2,'Videogames':2,'Imagem & Ação':2,'Sobremesa':2,'Coregrafia':2,'Boardgames':2},
-        {'Badminton':5,'Vôlei de grama':2,'Ping pong de mesa':1,'Beer pong':2,'Chute a garrafa':2,'Baralho (Sueca, Truco...)':2,'Videogames':1,'Imagem & Ação':5,'Sobremesa':5,'Coregrafia':2,'Boardgames':3},
-        {'Badminton':5,'Vôlei de grama':5,'Ping pong de mesa':5,'Beer pong':4,'Chute a garrafa':5,'Baralho (Sueca, Truco...)':0,'Videogames':5,'Imagem & Ação':3,'Sobremesa':2,'Coregrafia':4,'Boardgames':5},
-        {'Badminton':3,'Vôlei de grama':2,'Ping pong de mesa':2,'Beer pong':3,'Chute a garrafa':4,'Baralho (Sueca, Truco...)':3,'Videogames':3,'Imagem & Ação':3,'Sobremesa':2,'Coregrafia':4,'Boardgames':5}
-    ]
-
-preferences = [
-        {'Lucas Neno':0,'Bruno Mibielli':1,'Pedro Aquino':0,'Paulo Galeão':0,'João Pedro Castro':1,'Duda Magluta':0,'Lucas Tostes':1,'Gabriel Lessa':0,'Felipe Arêas':1,'Patrícia Telles':0,'Tito Labrunie':0,'Ilan Vale':1,'Roberto Soares':0,'Isadora Barretto':0,'Rafael Freitas':1,'Djavan':0,'Morgan Freeman':1,'Luaré':0,'Diogo':0,'Julia':0,'Nicko':0,'Novas pessoas':0},
-        {'Lucas Neno':1,'Bruno Mibielli':1,'Pedro Aquino':1,'Paulo Galeão':1,'João Pedro Castro':1,'Duda Magluta':1,'Lucas Tostes':1,'Gabriel Lessa':1,'Felipe Arêas':0,'Patrícia Telles':0,'Tito Labrunie':0,'Ilan Vale':0,'Roberto Soares':1,'Isadora Barretto':1,'Rafael Freitas':1,'Djavan':1,'Morgan Freeman':0,'Luaré':0,'Diogo':0,'Julia':0,'Nicko':0,'Novas pessoas':0},
-        {'Lucas Neno':1,'Bruno Mibielli':1,'Pedro Aquino':1,'Paulo Galeão':1,'João Pedro Castro':1,'Duda Magluta':1,'Lucas Tostes':1,'Gabriel Lessa':1,'Felipe Arêas':1,'Patrícia Telles':1,'Tito Labrunie':1,'Ilan Vale':1,'Roberto Soares':1,'Isadora Barretto':1,'Rafael Freitas':1,'Djavan':1,'Morgan Freeman':0,'Luaré':0,'Diogo':0,'Julia':0,'Nicko':0,'Novas pessoas':0},
-        {'Lucas Neno':1,'Bruno Mibielli':1,'Pedro Aquino':1,'Paulo Galeão':0,'João Pedro Castro':1,'Duda Magluta':0,'Lucas Tostes':1,'Gabriel Lessa':1,'Felipe Arêas':0,'Patrícia Telles':0,'Tito Labrunie':1,'Ilan Vale':0,'Roberto Soares':1,'Isadora Barretto':1,'Rafael Freitas':1,'Djavan':0,'Morgan Freeman':0,'Luaré':1,'Diogo':1,'Julia':1,'Nicko':1,'Novas pessoas':1},
-        {'Lucas Neno':0,'Bruno Mibielli':1,'Pedro Aquino':0,'Paulo Galeão':1,'João Pedro Castro':1,'Duda Magluta':0,'Lucas Tostes':1,'Gabriel Lessa':0,'Felipe Arêas':0,'Patrícia Telles':0,'Tito Labrunie':0,'Ilan Vale':1,'Roberto Soares':0,'Isadora Barretto':0,'Rafael Freitas':1,'Djavan':0,'Morgan Freeman':0,'Luaré':0,'Diogo':0,'Julia':0,'Nicko':0,'Novas pessoas':0},
-        {'Lucas Neno':0,'Bruno Mibielli':0,'Pedro Aquino':1,'Paulo Galeão':0,'João Pedro Castro':0,'Duda Magluta':0,'Lucas Tostes':1,'Gabriel Lessa':1,'Felipe Arêas':0,'Patrícia Telles':0,'Tito Labrunie':0,'Ilan Vale':0,'Roberto Soares':1,'Isadora Barretto':1,'Rafael Freitas':1,'Djavan':0,'Morgan Freeman':0,'Luaré':0,'Diogo':0,'Julia':0,'Nicko':0,'Novas pessoas':0},
-        {'Lucas Neno':1,'Bruno Mibielli':0,'Pedro Aquino':1,'Paulo Galeão':0,'João Pedro Castro':0,'Duda Magluta':0,'Lucas Tostes':0,'Gabriel Lessa':0,'Felipe Arêas':1,'Patrícia Telles':1,'Tito Labrunie':0,'Ilan Vale':0,'Roberto Soares':1,'Isadora Barretto':1,'Rafael Freitas':1,'Djavan':1,'Morgan Freeman':0,'Luaré':0,'Diogo':0,'Julia':0,'Nicko':0,'Novas pessoas':0},
-        {'Lucas Neno':0,'Bruno Mibielli':1,'Pedro Aquino':0,'Paulo Galeão':1,'João Pedro Castro':0,'Duda Magluta':0,'Lucas Tostes':0,'Gabriel Lessa':0,'Felipe Arêas':0,'Patrícia Telles':1,'Tito Labrunie':0,'Ilan Vale':0,'Roberto Soares':1,'Isadora Barretto':0,'Rafael Freitas':1,'Djavan':1,'Morgan Freeman':0,'Luaré':0,'Diogo':0,'Julia':0,'Nicko':0,'Novas pessoas':0},
-        {'Lucas Neno':0,'Bruno Mibielli':0,'Pedro Aquino':1,'Paulo Galeão':1,'João Pedro Castro':1,'Duda Magluta':0,'Lucas Tostes':1,'Gabriel Lessa':1,'Felipe Arêas':1,'Patrícia Telles':0,'Tito Labrunie':0,'Ilan Vale':0,'Roberto Soares':0,'Isadora Barretto':1,'Rafael Freitas':0,'Djavan':1,'Morgan Freeman':0,'Luaré':0,'Diogo':0,'Julia':0,'Nicko':0,'Novas pessoas':0},
-        {'Lucas Neno':1,'Bruno Mibielli':0,'Pedro Aquino':1,'Paulo Galeão':1,'João Pedro Castro':0,'Duda Magluta':1,'Lucas Tostes':1,'Gabriel Lessa':0,'Felipe Arêas':0,'Patrícia Telles':0,'Tito Labrunie':0,'Ilan Vale':1,'Roberto Soares':0,'Isadora Barretto':0,'Rafael Freitas':1,'Djavan':0,'Morgan Freeman':0,'Luaré':0,'Diogo':0,'Julia':0,'Nicko':0,'Novas pessoas':0},
-        {'Lucas Neno':1,'Bruno Mibielli':1,'Pedro Aquino':0,'Paulo Galeão':1,'João Pedro Castro':0,'Duda Magluta':0,'Lucas Tostes':1,'Gabriel Lessa':0,'Felipe Arêas':0,'Patrícia Telles':0,'Tito Labrunie':1,'Ilan Vale':1,'Roberto Soares':0,'Isadora Barretto':0,'Rafael Freitas':1,'Djavan':0,'Morgan Freeman':0,'Luaré':0,'Diogo':0,'Julia':0,'Nicko':0,'Novas pessoas':0},
-        {'Lucas Neno':1,'Bruno Mibielli':1,'Pedro Aquino':0,'Paulo Galeão':0,'João Pedro Castro':0,'Duda Magluta':0,'Lucas Tostes':0,'Gabriel Lessa':0,'Felipe Arêas':0,'Patrícia Telles':1,'Tito Labrunie':0,'Ilan Vale':0,'Roberto Soares':1,'Isadora Barretto':1,'Rafael Freitas':1,'Djavan':1,'Morgan Freeman':0,'Luaré':0,'Diogo':0,'Julia':0,'Nicko':0,'Novas pessoas':0},
-        {'Lucas Neno':1,'Bruno Mibielli':1,'Pedro Aquino':1,'Paulo Galeão':1,'João Pedro Castro':0,'Duda Magluta':1,'Lucas Tostes':1,'Gabriel Lessa':1,'Felipe Arêas':0,'Patrícia Telles':0,'Tito Labrunie':0,'Ilan Vale':0,'Roberto Soares':0,'Isadora Barretto':0,'Rafael Freitas':1,'Djavan':0,'Morgan Freeman':0,'Luaré':0,'Diogo':0,'Julia':0,'Nicko':0,'Novas pessoas':0},
-        {'Lucas Neno':0,'Bruno Mibielli':1,'Pedro Aquino':0,'Paulo Galeão':1,'João Pedro Castro':0,'Duda Magluta':1,'Lucas Tostes':1,'Gabriel Lessa':0,'Felipe Arêas':0,'Patrícia Telles':0,'Tito Labrunie':0,'Ilan Vale':0,'Roberto Soares':1,'Isadora Barretto':1,'Rafael Freitas':1,'Djavan':1,'Morgan Freeman':0,'Luaré':0,'Diogo':0,'Julia':0,'Nicko':0,'Novas pessoas':0},
-        {'Lucas Neno':0,'Bruno Mibielli':0,'Pedro Aquino':0,'Paulo Galeão':0,'João Pedro Castro':0,'Duda Magluta':0,'Lucas Tostes':0,'Gabriel Lessa':0,'Felipe Arêas':0,'Patrícia Telles':0,'Tito Labrunie':0,'Ilan Vale':0,'Roberto Soares':0,'Isadora Barretto':0,'Rafael Freitas':0,'Djavan':0,'Morgan Freeman':0,'Luaré':0,'Diogo':0,'Julia':0,'Nicko':0,'Novas pessoas':0},
-        {'Lucas Neno':0,'Bruno Mibielli':0,'Pedro Aquino':0,'Paulo Galeão':0,'João Pedro Castro':0,'Duda Magluta':0,'Lucas Tostes':0,'Gabriel Lessa':0,'Felipe Arêas':0,'Patrícia Telles':0,'Tito Labrunie':0,'Ilan Vale':0,'Roberto Soares':0,'Isadora Barretto':0,'Rafael Freitas':0,'Djavan':0,'Morgan Freeman':0,'Luaré':0,'Diogo':0,'Julia':0,'Nicko':0,'Novas pessoas':0}
-    ]
-
 history_multiplier = 1
 
-history = [
-    {'Lucas Neno':0,'Bruno Mibielli':1,'Pedro Aquino':1,'Paulo Galeão':2,'João Pedro Castro':1,'Duda Magluta':1,'Lucas Tostes':0,'Gabriel Lessa':0,'Felipe Arêas':0,'Patrícia Telles':0,'Tito Labrunie':1,'Ilan Vale':0,'Roberto Soares':0,'Isadora Barretto':1,'Rafael Freitas':1,'Luaré':1},
-    {'Lucas Neno':1,'Bruno Mibielli':0,'Pedro Aquino':0,'Paulo Galeão':0,'João Pedro Castro':0,'Duda Magluta':0,'Lucas Tostes':1,'Gabriel Lessa':1,'Felipe Arêas':1,'Patrícia Telles':0,'Tito Labrunie':1,'Ilan Vale':0,'Roberto Soares':0,'Isadora Barretto':0,'Rafael Freitas':0,'Luaré':0},
-    {'Lucas Neno':1,'Bruno Mibielli':0,'Pedro Aquino':0,'Paulo Galeão':1,'João Pedro Castro':0,'Duda Magluta':1,'Lucas Tostes':0,'Gabriel Lessa':0,'Felipe Arêas':0,'Patrícia Telles':1,'Tito Labrunie':0,'Ilan Vale':0,'Roberto Soares':0,'Isadora Barretto':0,'Rafael Freitas':1,'Luaré':0},
-    {'Lucas Neno':2,'Bruno Mibielli':0,'Pedro Aquino':1,'Paulo Galeão':0,'João Pedro Castro':2,'Duda Magluta':1,'Lucas Tostes':1,'Gabriel Lessa':1,'Felipe Arêas':0,'Patrícia Telles':0,'Tito Labrunie':0,'Ilan Vale':1,'Roberto Soares':0,'Isadora Barretto':1,'Rafael Freitas':0,'Luaré':1},
-    {'Lucas Neno':1,'Bruno Mibielli':0,'Pedro Aquino':0,'Paulo Galeão':2,'João Pedro Castro':0,'Duda Magluta':2,'Lucas Tostes':1,'Gabriel Lessa':0,'Felipe Arêas':0,'Patrícia Telles':0,'Tito Labrunie':0,'Ilan Vale':2,'Roberto Soares':0,'Isadora Barretto':1,'Rafael Freitas':1,'Luaré':0},
-    {'Lucas Neno':1,'Bruno Mibielli':0,'Pedro Aquino':1,'Paulo Galeão':1,'João Pedro Castro':2,'Duda Magluta':0,'Lucas Tostes':1,'Gabriel Lessa':0,'Felipe Arêas':0,'Patrícia Telles':1,'Tito Labrunie':1,'Ilan Vale':1,'Roberto Soares':0,'Isadora Barretto':0,'Rafael Freitas':1,'Luaré':0},
-    {'Lucas Neno':0,'Bruno Mibielli':1,'Pedro Aquino':0,'Paulo Galeão':1,'João Pedro Castro':1,'Duda Magluta':1,'Lucas Tostes':0,'Gabriel Lessa':1,'Felipe Arêas':0,'Patrícia Telles':0,'Tito Labrunie':1,'Ilan Vale':1,'Roberto Soares':0,'Isadora Barretto':0,'Rafael Freitas':0,'Luaré':1},
-    {'Lucas Neno':0,'Bruno Mibielli':1,'Pedro Aquino':0,'Paulo Galeão':1,'João Pedro Castro':0,'Duda Magluta':0,'Lucas Tostes':1,'Gabriel Lessa':0,'Felipe Arêas':0,'Patrícia Telles':0,'Tito Labrunie':1,'Ilan Vale':0,'Roberto Soares':0,'Isadora Barretto':0,'Rafael Freitas':0,'Luaré':1},
-    {'Lucas Neno':0,'Bruno Mibielli':1,'Pedro Aquino':0,'Paulo Galeão':0,'João Pedro Castro':0,'Duda Magluta':0,'Lucas Tostes':0,'Gabriel Lessa':0,'Felipe Arêas':0,'Patrícia Telles':0,'Tito Labrunie':0,'Ilan Vale':1,'Roberto Soares':0,'Isadora Barretto':0,'Rafael Freitas':2,'Luaré':0},
-    {'Lucas Neno':0,'Bruno Mibielli':0,'Pedro Aquino':1,'Paulo Galeão':0,'João Pedro Castro':0,'Duda Magluta':1,'Lucas Tostes':0,'Gabriel Lessa':0,'Felipe Arêas':0,'Patrícia Telles':0,'Tito Labrunie':0,'Ilan Vale':0,'Roberto Soares':0,'Isadora Barretto':0,'Rafael Freitas':1,'Luaré':0},
-    {'Lucas Neno':1,'Bruno Mibielli':1,'Pedro Aquino':0,'Paulo Galeão':0,'João Pedro Castro':0,'Duda Magluta':1,'Lucas Tostes':1,'Gabriel Lessa':1,'Felipe Arêas':0,'Patrícia Telles':0,'Tito Labrunie':0,'Ilan Vale':0,'Roberto Soares':0,'Isadora Barretto':0,'Rafael Freitas':0,'Luaré':0},
-    {'Lucas Neno':0,'Bruno Mibielli':0,'Pedro Aquino':0,'Paulo Galeão':1,'João Pedro Castro':2,'Duda Magluta':1,'Lucas Tostes':1,'Gabriel Lessa':0,'Felipe Arêas':1,'Patrícia Telles':0,'Tito Labrunie':0,'Ilan Vale':0,'Roberto Soares':0,'Isadora Barretto':0,'Rafael Freitas':0,'Luaré':0},
-    {'Lucas Neno':0,'Bruno Mibielli':0,'Pedro Aquino':0,'Paulo Galeão':0,'João Pedro Castro':0,'Duda Magluta':0,'Lucas Tostes':0,'Gabriel Lessa':0,'Felipe Arêas':0,'Patrícia Telles':0,'Tito Labrunie':0,'Ilan Vale':0,'Roberto Soares':0,'Isadora Barretto':0,'Rafael Freitas':0,'Luaré':0},
-    {'Lucas Neno':1,'Bruno Mibielli':0,'Pedro Aquino':0,'Paulo Galeão':1,'João Pedro Castro':1,'Duda Magluta':0,'Lucas Tostes':0,'Gabriel Lessa':0,'Felipe Arêas':0,'Patrícia Telles':0,'Tito Labrunie':0,'Ilan Vale':0,'Roberto Soares':0,'Isadora Barretto':0,'Rafael Freitas':0,'Luaré':0},
-    {'Lucas Neno':1,'Bruno Mibielli':0,'Pedro Aquino':1,'Paulo Galeão':0,'João Pedro Castro':1,'Duda Magluta':1,'Lucas Tostes':0,'Gabriel Lessa':0,'Felipe Arêas':2,'Patrícia Telles':1,'Tito Labrunie':0,'Ilan Vale':0,'Roberto Soares':0,'Isadora Barretto':0,'Rafael Freitas':0,'Luaré':1},
-    {'Lucas Neno':1,'Bruno Mibielli':0,'Pedro Aquino':0,'Paulo Galeão':1,'João Pedro Castro':0,'Duda Magluta':0,'Lucas Tostes':1,'Gabriel Lessa':1,'Felipe Arêas':0,'Patrícia Telles':0,'Tito Labrunie':0,'Ilan Vale':0,'Roberto Soares':0,'Isadora Barretto':0,'Rafael Freitas':1,'Luaré':0},]
+participants_path = 'example_data/participants.json'
+modalweights_path = 'example_data/modal_weights.json'
 
+# Loading participants
+participants = {}
+
+with open(participants_path,'r') as f:
+    participants = json.load(f)
+
+participants_list = list(participants.keys())
+
+# Loading modal weights
+modals_weigths = {}
+
+with open(modalweights_path,'r') as f:
+    modals_weigths = json.load(f)
+
+# Loading participants info
+competencies = [it['Competencies'] for it in participants.values()]
+preferences = [it['Preferences'] for it in participants.values()]
+history = [it['History'] for it in participants.values()]
+
+
+# Model functions
 def create_individual(data):
     remainder = list(data)[:]
 
@@ -172,6 +110,8 @@ def fitness(individual, data):
                 fitness -= history_multiplier * data[member][2][colleague]
 
     return fitness
+
+# Running
 
 data = dict(dict(zip(participants,zip(competencies,preferences,history))))
 

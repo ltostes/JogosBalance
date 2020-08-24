@@ -1,0 +1,98 @@
+{
+    "Player #1" : 
+        {
+            "Competencies": {"Badminton":2,"Vôlei de grama":4,"Ping pong de mesa":3,"Beer pong":3,"Chute a garrafa":1,"Baralho (Sueca, Truco...)":2,"Videogames":3,"Imagem & Ação":5,"Sobremesa":5,"Coregrafia":4,"Boardgames":5}
+            , "Preferences" : {"Player #1":0,"Player #2":1,"Player #3":0,"Player #4":0,"Player #5":1,"Player #6":0,"Player #7":1,"Player #8":0,"Player #9":1,"Player #10":0,"Player #11":0,"Player #12":1,"Player #13":0,"Player #14":0,"Player #15":1,"Djavan":0,"Morgan Freeman":1,"Player #16":0,"Player #17":0,"Player #18":0,"Player #19":0,"Novas pessoas":0}
+            , "History"     : {"Player #1":0,"Player #2":1,"Player #3":1,"Player #4":2,"Player #5":1,"Player #6":1,"Player #7":0,"Player #8":0,"Player #9":0,"Player #10":0,"Player #11":1,"Player #12":0,"Player #13":0,"Player #14":1,"Player #15":1,"Player #16":1}
+        }
+    , "Player #2" : 
+        {
+            "Competencies"  : {"Badminton":3,"Vôlei de grama":3,"Ping pong de mesa":3,"Beer pong":3,"Chute a garrafa":1,"Baralho (Sueca, Truco...)":0,"Videogames":5,"Imagem & Ação":5,"Sobremesa":3,"Coregrafia":3,"Boardgames":3}
+            , "Preferences" : {"Player #1":1,"Player #2":1,"Player #3":1,"Player #4":1,"Player #5":1,"Player #6":1,"Player #7":1,"Player #8":1,"Player #9":0,"Player #10":0,"Player #11":0,"Player #12":0,"Player #13":1,"Player #14":1,"Player #15":1,"Djavan":1,"Morgan Freeman":0,"Player #16":0,"Player #17":0,"Player #18":0,"Player #19":0,"Novas pessoas":0}
+            , "History"     : {"Player #1":1,"Player #2":0,"Player #3":0,"Player #4":0,"Player #5":0,"Player #6":0,"Player #7":1,"Player #8":1,"Player #9":1,"Player #10":0,"Player #11":1,"Player #12":0,"Player #13":0,"Player #14":0,"Player #15":0,"Player #16":0}
+        }
+    , "Player #3" : 
+        {
+            "Competencies": {"Badminton":0,"Vôlei de grama":0,"Ping pong de mesa":0,"Beer pong":1,"Chute a garrafa":0,"Baralho (Sueca, Truco...)":2,"Videogames":4,"Imagem & Ação":3,"Sobremesa":1,"Coregrafia":1,"Boardgames":3}
+            , "Preferences" : {"Player #1":1,"Player #2":1,"Player #3":1,"Player #4":1,"Player #5":1,"Player #6":1,"Player #7":1,"Player #8":1,"Player #9":1,"Player #10":1,"Player #11":1,"Player #12":1,"Player #13":1,"Player #14":1,"Player #15":1,"Djavan":1,"Morgan Freeman":0,"Player #16":0,"Player #17":0,"Player #18":0,"Player #19":0,"Novas pessoas":0}
+            , "History"     : {"Player #1":1,"Player #2":0,"Player #3":0,"Player #4":1,"Player #5":0,"Player #6":1,"Player #7":0,"Player #8":0,"Player #9":0,"Player #10":1,"Player #11":0,"Player #12":0,"Player #13":0,"Player #14":0,"Player #15":1,"Player #16":0}
+        }
+    , "Player #4" : 
+        {
+            "Competencies": {"Badminton":2,"Vôlei de grama":2,"Ping pong de mesa":2,"Beer pong":2,"Chute a garrafa":2,"Baralho (Sueca, Truco...)":0,"Videogames":2,"Imagem & Ação":2,"Sobremesa":2,"Coregrafia":2,"Boardgames":2}
+            , "Preferences" : {"Player #1":1,"Player #2":1,"Player #3":1,"Player #4":0,"Player #5":1,"Player #6":0,"Player #7":1,"Player #8":1,"Player #9":0,"Player #10":0,"Player #11":1,"Player #12":0,"Player #13":1,"Player #14":1,"Player #15":1,"Djavan":0,"Morgan Freeman":0,"Player #16":1,"Player #17":1,"Player #18":1,"Player #19":1,"Novas pessoas":1}
+            , "History"     : {"Player #1":2,"Player #2":0,"Player #3":1,"Player #4":0,"Player #5":2,"Player #6":1,"Player #7":1,"Player #8":1,"Player #9":0,"Player #10":0,"Player #11":0,"Player #12":1,"Player #13":0,"Player #14":1,"Player #15":0,"Player #16":1}
+        }
+    , "Player #5" : 
+        {
+            "Competencies": {"Badminton":4,"Vôlei de grama":3,"Ping pong de mesa":4,"Beer pong":5,"Chute a garrafa":1,"Baralho (Sueca, Truco...)":5,"Videogames":4,"Imagem & Ação":4,"Sobremesa":4,"Coregrafia":3,"Boardgames":4}
+            , "Preferences" : {"Player #1":0,"Player #2":1,"Player #3":0,"Player #4":1,"Player #5":1,"Player #6":0,"Player #7":1,"Player #8":0,"Player #9":0,"Player #10":0,"Player #11":0,"Player #12":1,"Player #13":0,"Player #14":0,"Player #15":1,"Djavan":0,"Morgan Freeman":0,"Player #16":0,"Player #17":0,"Player #18":0,"Player #19":0,"Novas pessoas":0}
+            , "History"     : {"Player #1":1,"Player #2":0,"Player #3":0,"Player #4":2,"Player #5":0,"Player #6":2,"Player #7":1,"Player #8":0,"Player #9":0,"Player #10":0,"Player #11":0,"Player #12":2,"Player #13":0,"Player #14":1,"Player #15":1,"Player #16":0}
+        }
+    , "Player #6" : 
+        {
+            "Competencies": {"Badminton":5,"Vôlei de grama":5,"Ping pong de mesa":5,"Beer pong":5,"Chute a garrafa":0,"Baralho (Sueca, Truco...)":3,"Videogames":1,"Imagem & Ação":2,"Sobremesa":4,"Coregrafia":3,"Boardgames":3}
+            , "Preferences" : {"Player #1":0,"Player #2":0,"Player #3":1,"Player #4":0,"Player #5":0,"Player #6":0,"Player #7":1,"Player #8":1,"Player #9":0,"Player #10":0,"Player #11":0,"Player #12":0,"Player #13":1,"Player #14":1,"Player #15":1,"Djavan":0,"Morgan Freeman":0,"Player #16":0,"Player #17":0,"Player #18":0,"Player #19":0,"Novas pessoas":0}
+            , "History"     : {"Player #1":1,"Player #2":0,"Player #3":1,"Player #4":1,"Player #5":2,"Player #6":0,"Player #7":1,"Player #8":0,"Player #9":0,"Player #10":1,"Player #11":1,"Player #12":1,"Player #13":0,"Player #14":0,"Player #15":1,"Player #16":0}
+        }
+    , "Player #7" : 
+        {
+            "Competencies": {"Badminton":5,"Vôlei de grama":4,"Ping pong de mesa":4,"Beer pong":4,"Chute a garrafa":5,"Baralho (Sueca, Truco...)":3,"Videogames":5,"Imagem & Ação":5,"Sobremesa":1,"Coregrafia":5,"Boardgames":5}
+            , "Preferences" : {"Player #1":1,"Player #2":0,"Player #3":1,"Player #4":0,"Player #5":0,"Player #6":0,"Player #7":0,"Player #8":0,"Player #9":1,"Player #10":1,"Player #11":0,"Player #12":0,"Player #13":1,"Player #14":1,"Player #15":1,"Djavan":1,"Morgan Freeman":0,"Player #16":0,"Player #17":0,"Player #18":0,"Player #19":0,"Novas pessoas":0}
+            , "History"     : {"Player #1":0,"Player #2":1,"Player #3":0,"Player #4":1,"Player #5":1,"Player #6":1,"Player #7":0,"Player #8":1,"Player #9":0,"Player #10":0,"Player #11":1,"Player #12":1,"Player #13":0,"Player #14":0,"Player #15":0,"Player #16":1}
+        }
+    , "Player #8" : 
+        {
+            "Competencies": {"Badminton":1,"Vôlei de grama":1,"Ping pong de mesa":2,"Beer pong":1,"Chute a garrafa":2,"Baralho (Sueca, Truco...)":0,"Videogames":3,"Imagem & Ação":1,"Sobremesa":0,"Coregrafia":1,"Boardgames":1}
+            , "Preferences" : {"Player #1":0,"Player #2":1,"Player #3":0,"Player #4":1,"Player #5":0,"Player #6":0,"Player #7":0,"Player #8":0,"Player #9":0,"Player #10":1,"Player #11":0,"Player #12":0,"Player #13":1,"Player #14":0,"Player #15":1,"Djavan":1,"Morgan Freeman":0,"Player #16":0,"Player #17":0,"Player #18":0,"Player #19":0,"Novas pessoas":0}
+            , "History"     : {"Player #1":0,"Player #2":1,"Player #3":0,"Player #4":1,"Player #5":0,"Player #6":0,"Player #7":1,"Player #8":0,"Player #9":0,"Player #10":0,"Player #11":1,"Player #12":0,"Player #13":0,"Player #14":0,"Player #15":0,"Player #16":1}
+        }
+    , "Player #9" : 
+        {
+            "Competencies": {"Badminton":3,"Vôlei de grama":3,"Ping pong de mesa":4,"Beer pong":2,"Chute a garrafa":3,"Baralho (Sueca, Truco...)":1,"Videogames":4,"Imagem & Ação":3,"Sobremesa":3,"Coregrafia":2,"Boardgames":3}
+            , "Preferences" : {"Player #1":0,"Player #2":0,"Player #3":1,"Player #4":1,"Player #5":1,"Player #6":0,"Player #7":1,"Player #8":1,"Player #9":1,"Player #10":0,"Player #11":0,"Player #12":0,"Player #13":0,"Player #14":1,"Player #15":0,"Djavan":1,"Morgan Freeman":0,"Player #16":0,"Player #17":0,"Player #18":0,"Player #19":0,"Novas pessoas":0}
+            , "History"     : {"Player #1":0,"Player #2":1,"Player #3":0,"Player #4":0,"Player #5":0,"Player #6":0,"Player #7":0,"Player #8":0,"Player #9":0,"Player #10":0,"Player #11":0,"Player #12":1,"Player #13":0,"Player #14":0,"Player #15":2,"Player #16":0}
+        }
+    , "Player #10" : 
+        {
+            "Competencies": {"Badminton":2,"Vôlei de grama":2,"Ping pong de mesa":1,"Beer pong":1,"Chute a garrafa":0,"Baralho (Sueca, Truco...)":0,"Videogames":1,"Imagem & Ação":0,"Sobremesa":2,"Coregrafia":2,"Boardgames":1}
+            , "Preferences" : {"Player #1":1,"Player #2":0,"Player #3":1,"Player #4":1,"Player #5":0,"Player #6":1,"Player #7":1,"Player #8":0,"Player #9":0,"Player #10":0,"Player #11":0,"Player #12":1,"Player #13":0,"Player #14":0,"Player #15":1,"Djavan":0,"Morgan Freeman":0,"Player #16":0,"Player #17":0,"Player #18":0,"Player #19":0,"Novas pessoas":0}
+            , "History"     : {"Player #1":0,"Player #2":0,"Player #3":1,"Player #4":0,"Player #5":0,"Player #6":1,"Player #7":0,"Player #8":0,"Player #9":0,"Player #10":0,"Player #11":0,"Player #12":0,"Player #13":0,"Player #14":0,"Player #15":1,"Player #16":0}
+        }
+    , "Player #11" : 
+        {
+            "Competencies": {"Badminton":4,"Vôlei de grama":5,"Ping pong de mesa":3,"Beer pong":5,"Chute a garrafa":2,"Baralho (Sueca, Truco...)":0,"Videogames":3,"Imagem & Ação":4,"Sobremesa":0,"Coregrafia":4,"Boardgames":3}
+            , "Preferences" : {"Player #1":1,"Player #2":1,"Player #3":0,"Player #4":1,"Player #5":0,"Player #6":0,"Player #7":1,"Player #8":0,"Player #9":0,"Player #10":0,"Player #11":1,"Player #12":1,"Player #13":0,"Player #14":0,"Player #15":1,"Djavan":0,"Morgan Freeman":0,"Player #16":0,"Player #17":0,"Player #18":0,"Player #19":0,"Novas pessoas":0}
+            , "History"     : {"Player #1":1,"Player #2":1,"Player #3":0,"Player #4":0,"Player #5":0,"Player #6":1,"Player #7":1,"Player #8":1,"Player #9":0,"Player #10":0,"Player #11":0,"Player #12":0,"Player #13":0,"Player #14":0,"Player #15":0,"Player #16":0}
+        }
+    , "Player #12" : 
+        {
+            "Competencies": {"Badminton":5,"Vôlei de grama":5,"Ping pong de mesa":5,"Beer pong":4,"Chute a garrafa":3,"Baralho (Sueca, Truco...)":5,"Videogames":3,"Imagem & Ação":5,"Sobremesa":1,"Coregrafia":5,"Boardgames":3}
+            , "Preferences" : {"Player #1":1,"Player #2":1,"Player #3":0,"Player #4":0,"Player #5":0,"Player #6":0,"Player #7":0,"Player #8":0,"Player #9":0,"Player #10":1,"Player #11":0,"Player #12":0,"Player #13":1,"Player #14":1,"Player #15":1,"Djavan":1,"Morgan Freeman":0,"Player #16":0,"Player #17":0,"Player #18":0,"Player #19":0,"Novas pessoas":0}
+            , "History"     : {"Player #1":0,"Player #2":0,"Player #3":0,"Player #4":1,"Player #5":2,"Player #6":1,"Player #7":1,"Player #8":0,"Player #9":1,"Player #10":0,"Player #11":0,"Player #12":0,"Player #13":0,"Player #14":0,"Player #15":0,"Player #16":0}
+        }
+    , "Player #13" : 
+        {
+            "Competencies": {"Badminton":2,"Vôlei de grama":2,"Ping pong de mesa":2,"Beer pong":2,"Chute a garrafa":2,"Baralho (Sueca, Truco...)":2,"Videogames":2,"Imagem & Ação":2,"Sobremesa":2,"Coregrafia":2,"Boardgames":2}
+            , "Preferences" : {"Player #1":1,"Player #2":1,"Player #3":1,"Player #4":1,"Player #5":0,"Player #6":1,"Player #7":1,"Player #8":1,"Player #9":0,"Player #10":0,"Player #11":0,"Player #12":0,"Player #13":0,"Player #14":0,"Player #15":1,"Djavan":0,"Morgan Freeman":0,"Player #16":0,"Player #17":0,"Player #18":0,"Player #19":0,"Novas pessoas":0}
+            , "History"     : {"Player #1":0,"Player #2":0,"Player #3":0,"Player #4":0,"Player #5":0,"Player #6":0,"Player #7":0,"Player #8":0,"Player #9":0,"Player #10":0,"Player #11":0,"Player #12":0,"Player #13":0,"Player #14":0,"Player #15":0,"Player #16":0}
+        }
+    , "Player #14" : 
+        {
+            "Competencies": {"Badminton":5,"Vôlei de grama":2,"Ping pong de mesa":1,"Beer pong":2,"Chute a garrafa":2,"Baralho (Sueca, Truco...)":2,"Videogames":1,"Imagem & Ação":5,"Sobremesa":5,"Coregrafia":2,"Boardgames":3}
+            , "Preferences" : {"Player #1":0,"Player #2":1,"Player #3":0,"Player #4":1,"Player #5":0,"Player #6":1,"Player #7":1,"Player #8":0,"Player #9":0,"Player #10":0,"Player #11":0,"Player #12":0,"Player #13":1,"Player #14":1,"Player #15":1,"Djavan":1,"Morgan Freeman":0,"Player #16":0,"Player #17":0,"Player #18":0,"Player #19":0,"Novas pessoas":0}
+            , "History"     : {"Player #1":1,"Player #2":0,"Player #3":0,"Player #4":1,"Player #5":1,"Player #6":0,"Player #7":0,"Player #8":0,"Player #9":0,"Player #10":0,"Player #11":0,"Player #12":0,"Player #13":0,"Player #14":0,"Player #15":0,"Player #16":0}
+        }
+    , "Player #15" : 
+        {
+            "Competencies": {"Badminton":5,"Vôlei de grama":5,"Ping pong de mesa":5,"Beer pong":4,"Chute a garrafa":5,"Baralho (Sueca, Truco...)":0,"Videogames":5,"Imagem & Ação":3,"Sobremesa":2,"Coregrafia":4,"Boardgames":5}
+            , "Preferences" : {"Player #1":0,"Player #2":0,"Player #3":0,"Player #4":0,"Player #5":0,"Player #6":0,"Player #7":0,"Player #8":0,"Player #9":0,"Player #10":0,"Player #11":0,"Player #12":0,"Player #13":0,"Player #14":0,"Player #15":0,"Djavan":0,"Morgan Freeman":0,"Player #16":0,"Player #17":0,"Player #18":0,"Player #19":0,"Novas pessoas":0}
+            , "History"     : {"Player #1":1,"Player #2":0,"Player #3":1,"Player #4":0,"Player #5":1,"Player #6":1,"Player #7":0,"Player #8":0,"Player #9":2,"Player #10":1,"Player #11":0,"Player #12":0,"Player #13":0,"Player #14":0,"Player #15":0,"Player #16":1}
+        }
+    , "Player #16" : 
+        {
+            "Competencies": {"Badminton":3,"Vôlei de grama":2,"Ping pong de mesa":2,"Beer pong":3,"Chute a garrafa":4,"Baralho (Sueca, Truco...)":3,"Videogames":3,"Imagem & Ação":3,"Sobremesa":2,"Coregrafia":4,"Boardgames":5}
+            , "Preferences" : {"Player #1":0,"Player #2":0,"Player #3":0,"Player #4":0,"Player #5":0,"Player #6":0,"Player #7":0,"Player #8":0,"Player #9":0,"Player #10":0,"Player #11":0,"Player #12":0,"Player #13":0,"Player #14":0,"Player #15":0,"Djavan":0,"Morgan Freeman":0,"Player #16":0,"Player #17":0,"Player #18":0,"Player #19":0,"Novas pessoas":0}
+            , "History"     : {"Player #1":1,"Player #2":0,"Player #3":0,"Player #4":1,"Player #5":0,"Player #6":0,"Player #7":1,"Player #8":1,"Player #9":0,"Player #10":0,"Player #11":0,"Player #12":0,"Player #13":0,"Player #14":0,"Player #15":1,"Player #16":0}
+        }
+}
